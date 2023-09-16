@@ -1,20 +1,25 @@
 
 
-//const str = new String('Hello');
-//console.log(str);
 
-function Product(brand, price, discount){
-    
-    this.brand = brand;
-    this.price = price;
-    this.discount = discount;
+class Product {
 
-    this.getTotalPrice = function (){
-        return this.price * ((100 - this.discount) / 100)
+    constructor(brand, price, discount){
+        this.brand = brand;
+        this.price = price;
+        this.discount = discount;
+    }
+
+    getTotalPrice(){
+        return this.price * ((100 - this.discount) / 100);
+    }
+
+    static sum(x, y){
+        return x + y
     }
 }
 
-const product1 = new Product('BrandName1', 1000, 15);
+const product1 = new Product('BrandName', 1000, 15);
+console.log(product1);
 console.log(product1.getTotalPrice());
-
+console.log(Product.sum(10, 10));
 
