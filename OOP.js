@@ -1,25 +1,26 @@
 
 
 
-class Product {
+class User {
 
-    constructor(brand, price, discount){
-        this.brand = brand;
-        this.price = price;
-        this.discount = discount;
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
     }
 
-    getTotalPrice(){
-        return this.price * ((100 - this.discount) / 100);
-    }
-
-    static sum(x, y){
-        return x + y
+    getInfo = function(){
+        return `Name: ${this.name}, Age: ${this.age} `
     }
 }
 
-const product1 = new Product('BrandName', 1000, 15);
-console.log(product1);
-console.log(product1.getTotalPrice());
-console.log(Product.sum(10, 10));
 
+class Customer extends User {
+    constructor(name, age){
+        super(name, age);
+        
+    }
+}
+
+const customer = new Customer('Dima', 20);
+console.log(customer);
+console.log(customer.getInfo());
